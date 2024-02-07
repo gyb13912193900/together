@@ -6,23 +6,21 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #add8e6; /* 淡蓝色背景 */
+    background-color: #ffd1dc; /* 淡粉色背景 */
 }
 
 .heart {
     position: relative;
     width: 200px;
     height: 200px;
-    background-color: red;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     color: white;
-    clip-path: polygon(50% 0%, 0% 100%, 100% 100%); /* 暂时设置为三角形 */
+    background-color: red;
 }
 
-/* 创建爱心的上半部分 */
 .heart:before,
 .heart:after {
     content: "";
@@ -49,8 +47,7 @@ body, html {
 .text {
     position: relative;
     z-index: 10;
-    color: white;
-    font-size: 18px;
-    padding: 0 20px;
+    color: white; /* 文本颜色 */
+    font-size: 16px; /* 根据需要调整字体大小 */
     text-align: center;
 }
