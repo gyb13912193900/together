@@ -10,7 +10,39 @@ body, html {
 }
 
 .heart {
+    position: relative;
+    width: 100px;
+    height: 90px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
     color: white;
-    font-size: 2em;
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 50px;
+    height: 80px;
+    background: white;
+    border-radius: 50px 50px 0 0;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+}
+
+.heart::after {
+    left: 50px;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+}
+
+#daysCounter {
+    position: absolute;
+    top: 100%; /* Adjust this value to position the counter below the heart */
+    width: 100%;
     text-align: center;
 }
