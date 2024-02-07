@@ -1,21 +1,26 @@
 function updateCounter() {
-    // 中国时间偏差 (UTC+8)
-    const timezoneOffset = 8 * 60; // 8小时，以分钟为单位
-    const startDateUTC = new Date(Date.UTC(2022, 7, 9)); // 注意月份从0开始，所以7代表8月
+    // 设置起始时间为中国时间2022年8月9日0时0分0秒
+    // Date.UTC() 返回的是UTC时间，中国时间为UTC+8，因此需要加上8小时的毫秒数
+    const startDate = new Date(Date.UTC(2022, 7, 9) + 8 * 60 * 60 * 1000);
+
+    // 获取当前时间的UTC时间
     const now = new Date();
+    const nowUTC = new Date(Date.UTC(now.getFullYear(), now.getMonth(), now.getDate(), now.getHours(), now.getMinutes(), now.getSeconds()));
 
-    // 转换现在的时间为中国时间
-    const nowChinaTime = new Date(now.getTime() + (now.getTimezoneOffset() + timezoneOffset) * 60000);
+    // 计算时间差
+    const diff = nowUTC - startDate;
 
-    const diff = nowChinaTime - startDateUTC;
-
+    // 计算天数、小时数、分钟数和秒数
     const days = Math.floor(diff / (1000 * 60 * 60 * 24));
     const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
     const minutes = Math.floor((diff / 1000 / 60) % 60);
     const seconds = Math.floor((diff / 1000) % 60);
 
-    const formattedTime = `${days} Days : ${hours} Hours : ${minutes} Minutes : ${seconds} Seconds`;
-    document.getElementById('daysCounter').innerText = formattedTime;
+    // 更新页面元素
+    document.getElementById('days').innerText = `${days} Days`;
+    document.getElementById('hours').innerText = `${hours} Hours`;
+    document.getElementById('minutes').innerText = `${minutes} Minutes`;
+    document.getElementById('seconds').innerText = `${seconds} Seconds`;
 }
 
 // 更新计时器每秒钟一次
