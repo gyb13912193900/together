@@ -13,36 +13,18 @@ body, html {
     position: relative;
     width: 100px;
     height: 90px;
+    background-color: red;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     color: white;
-}
-
-.heart::before,
-.heart::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    width: 50px;
-    height: 80px;
-    background: red; /* 爱心颜色 */
-    border-radius: 50px 50px 0 0;
-    transform: rotate(-45deg);
-    transform-origin: 0 100%;
-}
-
-.heart::after {
-    left: 50px;
-    transform: rotate(45deg);
-    transform-origin: 100% 100%;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
 }
 
 .text {
-    position: relative;
-    z-index: 10; /* 确保文本显示在爱心上方 */
-    color: black; /* 文本颜色 */
     font-size: 14px;
     text-align: center;
+    position: relative;
+    z-index: 10;
 }
