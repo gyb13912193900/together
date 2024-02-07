@@ -10,44 +10,15 @@ body, html {
 }
 
 .heart {
-    position: relative;
-    width: 200px;
-    height: 200px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    /* ... (保持之前的爱心形状代码) ... */
+}
+
+.text, .time {
     color: white;
-    background-color: red;
-}
-
-.heart:before,
-.heart:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    width: 100px;
-    height: 160px;
-    background: red;
-    border-radius: 150px 150px 0 0;
-}
-
-.heart:before {
-    left: 50px;
-    transform: rotate(-45deg);
-    transform-origin: 0 100%;
-}
-
-.heart:after {
-    left: 50px;
-    transform: rotate(45deg);
-    transform-origin: 100% 100%;
-}
-
-.text {
-    position: relative;
-    z-index: 10;
-    color: white; /* 文本颜色 */
-    font-size: 16px; /* 根据需要调整字体大小 */
+    font-size: 16px;
     text-align: center;
+}
+
+.time {
+    padding: 5px 0; /* 在时间的行之间提供一些空间 */
 }
