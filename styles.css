@@ -6,18 +6,17 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: red;
+    background-color: #add8e6; /* 淡蓝色背景 */
 }
 
 .heart {
     position: relative;
     width: 100px;
     height: 90px;
-    text-align: center;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 14px;
     color: white;
 }
 
@@ -28,7 +27,7 @@ body, html {
     top: 0;
     width: 50px;
     height: 80px;
-    background: white;
+    background: red; /* 爱心颜色 */
     border-radius: 50px 50px 0 0;
     transform: rotate(-45deg);
     transform-origin: 0 100%;
@@ -40,9 +39,10 @@ body, html {
     transform-origin: 100% 100%;
 }
 
-#daysCounter {
-    position: absolute;
-    top: 100%; /* Adjust this value to position the counter below the heart */
-    width: 100%;
+.text {
+    position: relative;
+    z-index: 10; /* 确保文本显示在爱心上方 */
+    color: black; /* 文本颜色 */
+    font-size: 14px;
     text-align: center;
 }
