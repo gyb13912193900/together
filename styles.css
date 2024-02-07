@@ -14,49 +14,47 @@ body, html {
     width: 200px;
     height: 200px;
     background-color: red;
+    margin: 30px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    margin: 30px; /* 为心形和边界提供一些空间 */
+    justify-content: center;
+    flex-direction: column;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
 }
 
-.heart:before,
-.heart:after {
-    content: "";
+/* 使用伪元素创建顶部的圆形 */
+.heart::before,
+.heart::after {
+    content: '';
     position: absolute;
     width: 100px;
-    height: 160px;
-    background: red;
-    border-radius: 150px 150px 0 0;
+    height: 100px;
+    background-color: red;
+    border-radius: 50%;
 }
 
-.heart:before {
+.heart::before {
+    top: 0;
     left: 50px;
-    transform: rotate(-45deg);
-    transform-origin: 0 100%;
+    transform: translateX(-50%);
 }
 
-.heart:after {
-    left: 50px;
-    transform: rotate(45deg);
-    transform-origin: 100% 100%;
+.heart::after {
+    top: 0;
+    right: 50px;
+    transform: translateX(50%);
 }
 
-.text, .time {
+.text {
+    position: absolute;
+    font-size: 24px; /* 调整字体大小 */
+    font-weight: bold; /* 字体加粗 */
     color: white;
-    font-size: 24px; /* 加大字体大小 */
-    font-weight: bold; /* 加粗字体 */
     text-align: center;
-    margin: 0; /* 移除默认的 margin */
-    padding: 5px 0; /* 在不同的时间段之间提供一些空间 */
+    padding: 0 10px; /* 为文本的左右添加一些空间 */
 }
 
-/* 额外的样式可以确保内容在心形内垂直居中 */
-.heart {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px; /* 根据需要调整内边距以适应文字 */
+/* 特定的ID可以为不同的时间部分添加不同的样式 */
+#days, #hours, #minutes, #seconds {
+    padding: 2px 0;
 }
