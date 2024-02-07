@@ -11,20 +11,28 @@ body, html {
 
 .heart {
     position: relative;
-    width: 100px;
-    height: 90px;
+    width: 200px;
+    height: 180px;
     background-color: red;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     color: white;
-    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    clip-path: path('M 100 30 
+                     Q 150 0 200 30 
+                     Q 200 80 120 180 
+                     L 100 150 
+                     L 80 180 
+                     Q 0 80 80 30 
+                     Q 50 0 100 30 z'); /* 创建爱心形状 */
 }
 
 .text {
-    font-size: 14px;
-    text-align: center;
     position: relative;
     z-index: 10;
+    color: white; /* 文本颜色 */
+    font-size: 16px; /* 根据实际情况调整字体大小 */
+    padding: 0 20px; /* 确保文本不会溢出爱心形状 */
+    text-align: center;
 }
