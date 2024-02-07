@@ -10,15 +10,53 @@ body, html {
 }
 
 .heart {
-    /* ... (保持之前的爱心形状代码) ... */
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 30px; /* 为心形和边界提供一些空间 */
+}
+
+.heart:before,
+.heart:after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 160px;
+    background: red;
+    border-radius: 150px 150px 0 0;
+}
+
+.heart:before {
+    left: 50px;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+}
+
+.heart:after {
+    left: 50px;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
 }
 
 .text, .time {
     color: white;
-    font-size: 16px;
+    font-size: 24px; /* 加大字体大小 */
+    font-weight: bold; /* 加粗字体 */
     text-align: center;
+    margin: 0; /* 移除默认的 margin */
+    padding: 5px 0; /* 在不同的时间段之间提供一些空间 */
 }
 
-.time {
-    padding: 5px 0; /* 在时间的行之间提供一些空间 */
+/* 额外的样式可以确保内容在心形内垂直居中 */
+.heart {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* 根据需要调整内边距以适应文字 */
 }
