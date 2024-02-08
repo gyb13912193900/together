@@ -19,42 +19,27 @@ body, html {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    transform: scale(1.2); /* 根据需要调整大小 */
-    border-radius: 100px 100px 100px 100px;
-}
-
-.heart:before,
-.heart:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    width: 150px; /* 宽度为爱心宽度的一半 */
-    height: 240px; /* 高度稍微大于爱心宽度的一半 */
-    background-color: red;
-    border-radius: 150px 150px 0 0;
-    transform: rotate(-45deg);
-    transform-origin: 0 100%;
-}
-
-.heart:after {
-    left: 50%;
-    transform: rotate(45deg);
-    transform-origin: 100% 0;
+    clip-path: polygon(50% 0%, 0% 50%, 50% 100%, 100% 50%);
+    border-radius: 50%;
 }
 
 .text, .time {
     position: absolute;
-    width: 100%; /* 确保文本宽度足够 */
     font-size: 24px; /* 加大字体大小 */
     font-weight: bold; /* 加粗字体 */
     color: white;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    white-space: nowrap;
+}
+
+.text {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%); /* 调整位置以确保文本居中 */
 }
 
 .time {
-    display: block; /* 每个时间单位占一行 */
+    top: 60%; /* 根据需要调整位置 */
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
