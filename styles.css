@@ -9,25 +9,16 @@ body, html {
     background-color: #ffd1dc; /* 淡粉色背景 */
 }
 
-
-
-.text, .time {
-    position: absolute;
-    font-size: 24px; /* 加大字体大小 */
-    font-weight: bold; /* 加粗字体 */
-    color: white;
-    text-align: center;
-    white-space: nowrap;
+.heart {
+    /* ... (保持之前的爱心形状代码) ... */
 }
 
-.text {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -60%); /* 调整位置以确保文本居中 */
+.text, .time {
+    color: white;
+    font-size: 16px;
+    text-align: center;
 }
 
 .time {
-    top: 60%; /* 根据需要调整位置 */
-    left: 50%;
-    transform: translate(-50%, -50%);
+    padding: 5px 0; /* 在时间的行之间提供一些空间 */
 }
