@@ -11,47 +11,29 @@ body, html {
 
 .heart {
     position: relative;
-    width: 200px;
-    height: 200px;
+    width: 200px; /* 心形的宽度 */
+    height: 200px; /* 心形的高度 */
     background-color: red;
+    margin: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin: 30px;
-    transform: rotate(-45deg);
-    border-radius: 100px 100px 0 100px;
-}
-
-.heart::before,
-.heart::after {
-    content: '';
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    background-color: red;
-    border-radius: 100px 100px 0 100px;
-}
-
-.heart::before {
-    top: -100px;
-    left: 0;
-    transform: rotate(90deg);
-}
-
-.heart::after {
-    top: 0;
-    left: 100px;
-    transform: rotate(0deg);
+    clip-path: url("#heart-shape"); /* 使用 SVG clip-path */
+    transform: scale(1.2); /* 根据需要调整大小 */
 }
 
 .text, .time {
-    position: relative;
+    position: absolute;
+    width: 100%; /* 确保文本宽度足够 */
     font-size: 24px; /* 加大字体大小 */
-    font-weight: bold; /* 字体加粗 */
+    font-weight: bold; /* 加粗字体 */
     color: white;
     text-align: center;
-    transform: rotate(45deg); /* 反向旋转以对齐到页面 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .time {
