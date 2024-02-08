@@ -3,16 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Love Counter</title>
+    <title>Love Timer</title>
     <link rel="stylesheet" href="styles.css">
+    <svg width="0" height="0">
+      <defs>
+        <clipPath id="heart-shape" clipPathUnits="objectBoundingBox">
+          <path d="M0.5,0.45
+                   L0.1,0.85
+                   A0.25,0.25,0,0,1,0.5,0.05
+                   A0.25,0.25,0,0,1,0.9,0.85
+                   Z" />
+        </clipPath>
+      </defs>
+    </svg>
 </head>
 <body>
-    <div class="heart">
-        <div class="text">GYB&GYC</div>
-        <div id="days" class="time"></div>
-        <div id="hours" class="time"></div>
-        <div id="minutes" class="time"></div>
-        <div id="seconds" class="time"></div>
+    <div class="heart-wrapper">
+        <div class="heart">
+            <div class="text">GYB&GYC</div>
+            <div id="days" class="time"></div>
+            <div id="hours" class="time"></div>
+            <div id="minutes" class="time"></div>
+            <div id="seconds" class="time"></div>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
