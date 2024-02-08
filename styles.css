@@ -11,16 +11,35 @@ body, html {
 
 .heart {
     position: relative;
-    width: 200px; /* 心形的宽度 */
-    height: 200px; /* 心形的高度 */
+    width: 200px;
+    height: 200px;
     background-color: red;
     margin: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    clip-path: url("#heart-shape"); /* 使用 SVG clip-path */
     transform: scale(1.2); /* 根据需要调整大小 */
+    border-radius: 100px 100px 100px 100px;
+}
+
+.heart:before,
+.heart:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 150px; /* 宽度为爱心宽度的一半 */
+    height: 240px; /* 高度稍微大于爱心宽度的一半 */
+    background-color: red;
+    border-radius: 150px 150px 0 0;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+}
+
+.heart:after {
+    left: 50%;
+    transform: rotate(45deg);
+    transform-origin: 100% 0;
 }
 
 .text, .time {
