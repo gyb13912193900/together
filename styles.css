@@ -9,19 +9,7 @@ body, html {
     background-color: #ffd1dc; /* 淡粉色背景 */
 }
 
-.heart {
-    position: relative;
-    width: 200px;
-    height: 200px;
-    background-color: red;
-    margin: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    clip-path: polygon(50% 0%, 0% 50%, 50% 100%, 100% 50%);
-    border-radius: 50%;
-}
+
 
 .text, .time {
     position: absolute;
