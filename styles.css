@@ -9,27 +9,18 @@ body, html {
     background-color: #ffd1dc; /* 淡粉色背景 */
 }
 
-.heart-wrapper {
+.heart {
     position: relative;
     width: 200px;
     height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.heart {
-    position: absolute;
-    width: 200px;
-    height: 200px;
     background-color: red;
-    transform: rotate(-45deg);
-    margin: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    border-radius: 100px 100px 0 0;
+    margin: 30px;
+    transform: rotate(-45deg);
+    border-radius: 100px 100px 0 100px;
 }
 
 .heart::before,
@@ -39,23 +30,25 @@ body, html {
     width: 200px;
     height: 200px;
     background-color: red;
-    border-radius: 100px 100px 0 0;
+    border-radius: 100px 100px 0 100px;
 }
 
 .heart::before {
     top: -100px;
     left: 0;
+    transform: rotate(90deg);
 }
 
 .heart::after {
     top: 0;
     left: 100px;
+    transform: rotate(0deg);
 }
 
 .text, .time {
     position: relative;
     font-size: 24px; /* 加大字体大小 */
-    font-weight: bold; /* 加粗字体 */
+    font-weight: bold; /* 字体加粗 */
     color: white;
     text-align: center;
     transform: rotate(45deg); /* 反向旋转以对齐到页面 */
